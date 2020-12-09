@@ -26,7 +26,7 @@ def get_args():
     parser.add_argument('--debug', action='store_true')
     # training specific args
     parser.add_argument('--dataset', type=str, default='cifar10', help='choose from random, stl10, mnist, cifar10, cifar100, imagenet')
-    parser.add_argument('--download', action='store_true', help="if can't find dataset, download from web")
+    parser.add_argument('--download', action='store_true', default=True, help="if can't find dataset, download from web")
     parser.add_argument('--image_size', type=int, default=224)
     parser.add_argument('--num_workers', type=int, default=4)
     parser.add_argument('--data_dir', type=str, default=os.getenv('DATA'))
@@ -56,7 +56,7 @@ def get_args():
     parser.add_argument('--eval_after_train', type=str, default=None)
     parser.add_argument('--head_tail_accuracy', action='store_true', help='the acc in first epoch will indicate whether collapse or not, the last epoch shows the final accuracy')
     args = parser.parse_args()
-    
+    print(args)
     if args.debug:
         args.batch_size = 2 
         args.stop_at_epoch = 2

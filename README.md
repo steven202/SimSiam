@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ### Run this command to test the environment
 
 ```
-python main.py --debug --dataset cifar10 --data_dir "/Your/data/folder/" --output_dir "/Your/output/folder/"
+python main.py --debug --dataset cifar10 --data_dir "./data/" --output_dir "./output/"
 ```
 The data folder should look like this:
 ```
